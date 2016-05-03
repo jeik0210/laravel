@@ -19,6 +19,11 @@
 			<td>
 				{!!link_to_route('usuario.edit', $title = 'editar', $parameters = $user->id, $attributes = ['class'=>'btn btn-primary'])!!}
 			</td>
+			<td>
+			{!!Form::model($user,['route'=>['usuario.destroy',$user->id],'method'=>'delete'])!!}
+			{!!Form::submit('eliminar',['class'=>'btn btn-danger'])!!}
+			{!!Form::close()!!}
+			</td>
 		</tbody>
 		@endforeach
 	</table>

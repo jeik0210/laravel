@@ -10,4 +10,4 @@
 			{!!Form::label('password')!!}
 			{!!Form::password('password',['class'=>'form-control','placeholder'=>'ingresar su contraseña'])!!}
 		</div>
-		{!!Form::submit('Registrar',['class'=>'btn btn-primary'])!!}
+		

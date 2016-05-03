@@ -36,8 +36,14 @@ class UsuarioController extends Controller
     public function update($id, Request $request){
     	$user = User::find($id);
     	$user->fill($request->all());
-    	$user->save;
+    	$user->save();
     	Session::flash('message','usuario editado correctamente');
     	return Redirect::to('/usuario');
+    }
+
+    public function destroy($id){
+        User::destroy($id);
+        Session::flash('message','usuario eliminado correctamente');
+        return Redirect::to('/usuario');
     }
 }
