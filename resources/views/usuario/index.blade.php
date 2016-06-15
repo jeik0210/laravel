@@ -6,6 +6,7 @@
   {{Session::get('message')}}
 </div>
 @endif
+<h5>altualmente existen {!!$users->count()!!} usuarios registrados</h5>
 	<table class="table">
 		<thead>
 			<th>nombre</th>
@@ -17,7 +18,7 @@
 			<td>{{$user->name}}</td>
 			<td>{{$user->email}}</td>
 			<td>
-				{!!link_to_route('usuario.edit', $title = 'editar', $parameters = $user->id, $attributes = ['class'=>'btn btn-primary'])!!}
+				{!!link_to_route('usuario.edit', $title = 'editar', $parameters = [$user->id], $attributes = ['class'=>'btn btn-primary'])!!}
 			</td>
 			<td>
 			{!!Form::model($user,['route'=>['usuario.destroy',$user->id],'method'=>'delete'])!!}
@@ -27,4 +28,9 @@
 		</tbody>
 		@endforeach
 	</table>
+	{!!$users->render()!!}
+	<br>
+	{!!link_to_route('usuario.create', $title = 'crear usuario', $parameters = [], $attributes = ['class'=>'btn btn-success'])!!}
+	<br>
+	{!!link_to_route('probar_path', $title = 'crear genero', $parameters = array(), $attributes = array())!!}
 @stop

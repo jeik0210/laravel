@@ -40,7 +40,7 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
+            <li><a href="#">{!!link_to_route('probar_path', $title = 'ir peliculas', $parameters = array(), $attributes = array())!!}</a></li>
             <li><a href="#">Another action</a></li>
             <li><a href="#">Something else here</a></li>
             <li role="separator" class="divider"></li>
@@ -74,5 +74,6 @@
 </nav>
 	@yield('content')
 	{!! Html::script('assets/js/bootstrap.min.js') !!}
+  {!! Html::script('assets/js/script.js') !!}
 </body>
 </html>

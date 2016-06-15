@@ -9,6 +9,6 @@ use Cinema\Http\Requests;
 class MovieController extends Controller
 {
     public function index(){
-    	return view('layouts.principal');
+    	return view('movie.index');
     }
 }

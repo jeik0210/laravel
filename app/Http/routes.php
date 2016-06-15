@@ -11,7 +11,18 @@
 |
 */
 
-Route::get('/', 'MovieController@index');
+Route::get('/', 'UsuarioController@index');
 Route::get('contacto', 'FrondController@contacto');
 Route::get('reviews', 'FrondController@reviews');
 Route::resource('usuario','UsuarioController');
+Route::resource('genero','GeneroController');
+/*
+Route::get('lista/usuario', [
+    'as' => 'profile', 'uses' => 'UsuarioController@index'
+]);
+*/
+
+Route::get('probar/movie', [
+    'as' => 'probar_path', 'uses' => 'MovieController@index'
+]);
+
